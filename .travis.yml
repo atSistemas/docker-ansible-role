@@ -6,41 +6,9 @@ env:
     version: 7
     init: /usr/lib/systemd/systemd
     run_opts: "'--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro'"
-    extra_vars: ""
+    extra_vars: "'--extra-vars @/etc/ansible/roles/docker_ansible_role/travis/extra_vars.json'"
   - distribution: fedora
-    version: 25
-    init: /usr/lib/systemd/systemd
-    run_opts: "'--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro'"
-    extra_vars: ""
-  - distribution: fedora
-    version: 24
-    init: /usr/lib/systemd/systemd
-    run_opts: "'--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro'"
-    extra_vars: ""
-  - distribution: ubuntu
-    version: xenial
-    init: /sbin/init
-    run_opts: ""
-    extra_vars: ""
-  - distribution: ubuntu
-    version: trusty
-    init: /sbin/init
-    run_opts: ""
-    extra_vars: ""
-  - distribution: debian
-    version: stretch
-    init: /usr/lib/systemd/systemd
-    run_opts: ""
-    extra_vars: ""
-  - distribution: debian
-    version: jessie
-    init: /sbin/init
-    run_opts: ""
-    extra_vars: ""
-
-
-  - distribution: centos
-    version: 7
+    version: 26
     init: /usr/lib/systemd/systemd
     run_opts: "'--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro'"
     extra_vars: "'--extra-vars @/etc/ansible/roles/docker_ansible_role/travis/extra_vars.json'"
@@ -93,6 +61,3 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
   - 'sudo docker rm -f "$(cat ${container_id})"'
-
-notifications:
-  webhooks: https://galaxy.ansible.com/api/v1/notifications/
