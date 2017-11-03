@@ -102,7 +102,7 @@ Example Playbook
 ```yaml
 - hosts: all
   roles:
-     - drhelius.docker
+     - docker
 ```
 ```yaml
 - hosts: all
@@ -110,7 +110,7 @@ Example Playbook
     - docker_compose: yes
     - docker_channel: edge
   roles:
-     - drhelius.docker
+     - docker
 ```
 ```yaml
 - hosts: all
@@ -119,7 +119,7 @@ Example Playbook
     - docker_storage_driver: devicemapper
     - docker_block_device: /dev/sda3
   roles:
-     - drhelius.docker
+     - docker
 ```
 License
 -------
