@@ -34,8 +34,8 @@ env:
     extra_vars: "'--extra-vars @/etc/ansible/roles/docker_ansible_role/travis/extra_vars.json'"
   - distribution: debian
     version: stretch
-    init: /sbin/init
-    run_opts: ""
+    init: /bin/systemd
+    run_opts: "'--privileged -v /sys/fs/cgroup:/sys/fs/cgroup:ro'"
     extra_vars: "'--extra-vars @/etc/ansible/roles/docker_ansible_role/travis/extra_vars.json'"
   - distribution: debian
     version: jessie
