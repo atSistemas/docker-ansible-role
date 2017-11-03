@@ -4,7 +4,7 @@ atSistemas.docker
 [![Build Status](https://travis-ci.org/atSistemas/docker-ansible-role.svg?branch=master)](https://travis-ci.org/atSistemas/docker-ansible-role)
 
 
-Ansible role to install ans setup up to date versions of Docker CE and Docker Compose on CentOS, Debian, Ubuntu, Fedora and RHEL.
+Ansible role to install and setup up to date versions of Docker CE and Docker Compose on CentOS, Debian, Ubuntu, Fedora and RHEL.
 
 Role Variables
 --------------
